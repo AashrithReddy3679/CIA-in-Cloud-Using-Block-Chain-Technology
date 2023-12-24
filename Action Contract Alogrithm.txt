@@ -1,0 +1,19 @@
+public class MonitorActionContract {
+
+    public static void main(String[] args) {
+        
+        String Identifier = "Stakeholder"; 
+        String Policy = "PolicyData";
+        String Datacurrent = "DataCurrent"; 
+        String result = monitorActionContract(Identifier, Policy, Datacurrent);
+        System.out.println("Monitor action contract code: " + result);
+    }
+
+    public static String monitorActionContract(String Identifier, String Policy, String Datacurrent) {
+        String Action = "Read"; 
+        if (!Policy.contains(Action)) {
+             return "Revoke Access";
+        } else {
+            return "Grant Access";
+        }
+    }   }

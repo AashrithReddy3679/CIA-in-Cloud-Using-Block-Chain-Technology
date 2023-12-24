@@ -1,0 +1,35 @@
+public class Access {
+     public static void main(String[] args) {
+       String Identifier = "Stakeholder"; 
+        String Validate = "Contract"; 
+        HashMap<String, String> Mapping = new HashMap<>();
+        Mapping.put("Data", "Owner"); 
+        String result = accessContract(Identifier, Validate, Mapping);
+        System.out.println("Access contract code: " + result);
+    }
+
+    public static String accessContract(String Identifier, String Validate, HashMap<String, String> Mapping) {
+        String Action = "Write"; 
+         if (Action.equals("Write")) {
+            String Stakeholder = "Apply modification"; 
+            String Timestamp = "Record(Timestamp)"; 
+            String Modif icationsig = "Signature"; 
+            sendModificationsigToOwner(Modif icationsig);
+             return Stakeholder + "\n" + Timestamp + "\n" + Modif icationsig;
+        } else {
+            
+            String Modif icationsig = "Receive: Modif icationsig ← Owner"; 
+            validateModificationsig(Modif icationsig);
+            String Transcript = "Transcript → Computing Node";
+            String Timestamp = "Record(Timestamp)"; 
+             return Modif icationsig + "\n" + Transcript + "\n" + Timestamp;
+        }
+    }
+     public static void sendModificationsigToOwner(String modificationsig) {
+        System.out.println("Send: " + modificationsig + " → Owner (provenance)");
+    }
+     public static void validateModificationsig(String modificationsig) {
+        System.out.println("Validate: " + modificationsig + " ← Owner");
+    }
+}
+
